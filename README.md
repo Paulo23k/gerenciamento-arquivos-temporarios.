@@ -32,3 +32,27 @@ Um exemplo prático de uso seria a administração de um servidor Linux para uma
 ## Conclusão
 
 Gerenciar corretamente os arquivos temporários é essencial para manter a saúde e o desempenho dos sistemas Linux. Seguir as boas práticas e utilizar ferramentas como o `systemd-tmpfiles` garante que o sistema fique sempre limpo e otimizado.
+
+---------------------
+
+# Comandos Principais
+
+```bash
+# Visualizar a configuração do temporizador de limpeza:
+-> systemctl cat systemd-tmpfiles-clean.timer
+
+# Recarregar o daemon do systemd após editar um arquivo de configuração:
+-> systemctl daemon-reload
+
+# Executar a limpeza manual de arquivos temporários:
+-> systemd-tmpfiles --clean
+
+# Criar arquivos e diretórios temporários conforme definido nos arquivos de configuração:
+-> systemd-tmpfiles --create
+
+# Verificar o status do temporizador systemd-tmpfiles-clean:
+-> systemctl status systemd-tmpfiles-clean.timer
+
+# Verificar o status do serviço de limpeza de arquivos temporários:
+-> systemctl status systemd-tmpfiles-clean.service
+
